@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 /* reset */
 * {
   margin: 0;
@@ -5,6 +6,14 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 a {
@@ -20,10 +29,6 @@ body {
 }
 
 /* Header */
-header {
-  width: 100%;
-}
-
 header a {
   text-decoration: none;
   color: goldenrod;
@@ -36,9 +41,8 @@ header .header1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   align-items: center;
   background-color: #060629;
   height: 50px;
@@ -91,58 +95,128 @@ header .header2 {
   background-color: #060629;
 }
 
-header .header2 img {
-  width: 70px;
+header .header2 .nav-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-header .header2 a {
-  margin-left: 1rem;
+header .header2 .nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
 }
 
-@media (max-width: 940px) {
-  header .header2 .add {
-    display: none;
+header .header2 .mobile-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+@media (max-width: 400px) {
+  header .header2 .mobile-menu {
+    right: 4;
   }
 }
 
-header .header2 .img {
-  display: none;
+header .header2 .mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-@media (max-width: 940px) {
-  header .header2 .img {
+@media (max-width: 999px) {
+  header .header2 body {
+    overflow-x: hidden;
+  }
+  header .header2 .nav-list {
+    position: absolute;
+    top: 13vh;
+    width: 20vw;
+    height: 80vh;
+    background: #23232e;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    overflow-x: hidden;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  }
+  header .header2 .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  header .header2 .mobile-menu {
     display: block;
   }
 }
 
-@media (max-width: 600px) {
-  header .header2 .img {
-    width: 50px;
+header .header2 .nav-list.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  right: 0;
+}
+
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
-header .header2 .on {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #fff;
-  width: 300px;
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
-header .header2 .on a {
-  padding: 10px;
+header .header2 .mobile-menu.active .line1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 8px);
+          transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+header .header2 .mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+header .header2 .mobile-menu.active .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -7px);
+          transform: rotate(45deg) translate(-5px, -7px);
 }
 
 /*Main*/
 main {
-  min-width: 400px;
+  min-width: 300px;
   background: url("/Images/homem-de-negocios-que-usa-a-tabuleta-que-analisa-dados-das-vendas-e-carta-do-grafico-do-crescimento-economico_34200-308.jpg") no-repeat;
   background-size: cover;
-  height: 500px;
 }
 
 main .main {
@@ -176,7 +250,7 @@ main .main {
 
 @media (max-width: 600px) {
   main {
-    width: 400px;
+    min-width: 300px;
   }
 }
 
@@ -185,9 +259,41 @@ main .main1 {
   margin-bottom: 50px;
 }
 
+main .main1 .hs {
+  width: 300px;
+}
+
+@media (max-width: 640px) {
+  main .main1 .hs {
+    width: 280px;
+  }
+}
+
 main .main1 div {
   margin-top: 50px;
   margin-left: 50px;
+}
+
+@media (max-width: 600px) {
+  main .main1 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .main1 div a {
+    width: 100px;
+  }
 }
 
 main .main1 div .a1 {
@@ -219,6 +325,12 @@ main .formain {
   height: 450px;
 }
 
+@media (max-width: 600px) {
+  main .formain {
+    width: 300px;
+  }
+}
+
 main .formain h3 {
   text-align: center;
 }
@@ -229,12 +341,27 @@ main .formain .formdiv1 {
   display: flex;
 }
 
+@media (max-width: 600px) {
+  main .formain .formdiv1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 main .formain input {
   border: none;
   background: rgba(128, 128, 128, 0.494);
   border-radius: 5px;
   padding: 8px;
   margin: 2px;
+}
+
+@media (max-width: 600px) {
+  main .formain input {
+    padding: 4px;
+  }
 }
 
 main .formain .formdiv2 {
@@ -244,6 +371,12 @@ main .formain .formdiv2 {
 
 main .formain .formdiv2 input {
   width: 328px;
+}
+
+@media (max-width: 600px) {
+  main .formain .formdiv2 input {
+    width: 200px;
+  }
 }
 
 main .formain .formbutton {
@@ -291,6 +424,12 @@ main .formain .formbutton button {
   text-align: justify;
 }
 
+@media (max-width: 500px) {
+  .containermid .sec01 .disec1 {
+    width: 280px;
+  }
+}
+
 .containermid .sec01 .divsec2 {
   text-align: justify;
   margin-top: 50px;
@@ -328,13 +467,9 @@ main .formain .formbutton button {
   text-align: left;
 }
 
-.containermid .sec01 .divsecimg {
-  margin-left: 100px;
-}
-
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .containermid .sec01 .divsecimg img {
-    width: 400px;
+    width: 300px;
   }
 }
 
@@ -352,18 +487,16 @@ main .formain .formbutton button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 250px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-size: larger;
-  min-width: 400px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .containermid .sec02 .sec2 {
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
   }
 }
 
@@ -415,9 +548,16 @@ main .formain .formbutton button {
           justify-content: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  min-width: 400px;
+  min-width: 300px;
   background: #fff;
   color: black;
+}
+
+@media (max-width: 400px) {
+  .containermid .sec3 {
+    margin: 0 auto;
+    width: 400px;
+  }
 }
 
 .containermid .sec3 .sec30 {
@@ -425,13 +565,12 @@ main .formain .formbutton button {
   padding: 20px;
   text-align: center;
   min-width: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 800px) {
   .containermid .sec3 .sec30 {
-    width: 300px;
-    min-width: 400px;
+    width: 200px;
   }
 }
 
@@ -498,7 +637,27 @@ main .formain .formbutton button {
 }
 
 .sec4 .cardsec4 {
+  min-width: 380px;
   margin-bottom: 300px;
+}
+
+@media (max-width: 500px) {
+  .sec4 .cardsec4 {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .sec4 .sec41 {
@@ -509,10 +668,18 @@ main .formain .formbutton button {
   background: url("/Images/homem-de-negocios-que-usa-a-tabuleta-que-analisa-dados-das-vendas-e-carta-do-grafico-do-crescimento-economico_34200-308.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  min-width: 300px;
+}
+
+@media (max-width: 500px) {
+  .sec4 .sec41 {
+    margin: 0 auto;
+    width: 300px;
+  }
 }
 
 .sec4 .sec41 div {
-  background: rgba(0, 0, 139, 0.624);
+  background: rgba(0, 0, 139, 0.466);
   height: 100%;
   padding-top: 50px;
   display: -webkit-box;
@@ -529,7 +696,14 @@ main .formain .formbutton button {
 
 @media (max-width: 500px) {
   .sec4 .sec41 div {
-    width: 400px;
+    width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
   }
 }
 
@@ -548,6 +722,12 @@ main .formain .formbutton button {
 @media (max-width: 800px) {
   .sec4 .sec42 .carousel {
     width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sec4 .sec42 .carousel {
+    width: 300px;
   }
 }
 
@@ -646,9 +826,28 @@ main .formain .formbutton button {
   margin-top: 300px;
 }
 
+@media (max-width: 500px) {
+  .sec5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+}
+
 .sec5 .sec51 {
   background-color: #fff;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -657,7 +856,7 @@ main .formain .formbutton button {
           justify-content: center;
   text-align: center;
   color: black;
-  min-width: 400px;
+  min-width: 300px;
 }
 
 @media (max-width: 940px) {
@@ -667,6 +866,8 @@ main .formain .formbutton button {
         -ms-flex-direction: column;
             flex-direction: column;
     margin-top: 200px;
+    margin: 0 auto;
+    margin-left: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -683,14 +884,28 @@ main .formain .formbutton button {
 
 .sec5 .sec52 {
   width: 100vw;
-  min-width: 400px;
+  min-width: 300px;
   background: url("/Images/homem-de-negocios-que-usa-a-tabuleta-que-analisa-dados-das-vendas-e-carta-do-grafico-do-crescimento-economico_34200-308.jpg") no-repeat;
   background-size: cover;
+  min-width: 300px;
 }
 
 @media (max-width: 500px) {
   .sec5 .sec52 {
-    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 40px;
     height: 700px;
   }
 }
@@ -702,7 +917,7 @@ main .formain .formbutton button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: rgba(0, 0, 255, 0.652);
+  background: rgba(3, 3, 73, 0.364);
   width: 100%;
   margin: 0;
 }
