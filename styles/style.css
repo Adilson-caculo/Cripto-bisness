@@ -12,10 +12,6 @@ h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 a {
   text-decoration: none;
 }
@@ -25,10 +21,17 @@ input {
 }
 
 body {
+  width: 100vw;
+  overflow-x: hidden;
+  margin-right: 0;
   background-color: #060629;
 }
 
 /* Header */
+header {
+  margin-right: 0;
+}
+
 header a {
   text-decoration: none;
   color: goldenrod;
@@ -95,6 +98,12 @@ header .header2 {
   background-color: #060629;
 }
 
+@media (max-width: 500px) {
+  header .header2 img {
+    width: 80px;
+  }
+}
+
 header .header2 .nav-list {
   list-style: none;
   display: -webkit-box;
@@ -111,6 +120,7 @@ header .header2 .mobile-menu {
   display: none;
   cursor: pointer;
   position: absolute;
+  top: 50px;
   right: 0;
   z-index: 10;
 }
@@ -136,7 +146,8 @@ header .header2 .mobile-menu div {
   }
   header .header2 .nav-list {
     position: absolute;
-    top: 13vh;
+    right: 0;
+    top: 9vh;
     width: 20vw;
     height: 80vh;
     background: #23232e;
@@ -151,7 +162,6 @@ header .header2 .mobile-menu div {
         justify-content: space-around;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    overflow-x: hidden;
     -webkit-transition: -webkit-transform 0.3s ease-in;
     transition: -webkit-transform 0.3s ease-in;
     transition: transform 0.3s ease-in;
@@ -169,14 +179,15 @@ header .header2 .mobile-menu div {
 header .header2 .nav-list.active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  right: 0;
+  margin-right: 0px;
+  width: 24vw;
 }
 
 @-webkit-keyframes navLinkFade {
   from {
     opacity: 0;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -188,8 +199,8 @@ header .header2 .nav-list.active {
 @keyframes navLinkFade {
   from {
     opacity: 0;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -293,6 +304,8 @@ main .main1 div {
   }
   main .main1 div a {
     width: 100px;
+    padding: 3px;
+    background: #23232e;
   }
 }
 
@@ -303,11 +316,26 @@ main .main1 div .a1 {
   margin: 10px;
 }
 
+@media (max-width: 600px) {
+  main .main1 div .a1 {
+    padding: 3px;
+    border-radius: 4px;
+  }
+}
+
 main .main1 div .a2 {
   padding: 8px;
   color: white;
   background: #080888;
   margin-right: 10px;
+  font-family: 'Poppins' sans-serif;
+}
+
+@media (max-width: 600px) {
+  main .main1 div .a2 {
+    padding: 2px;
+    border-radius: 4px;
+  }
 }
 
 main .formain {
@@ -556,7 +584,6 @@ main .formain .formbutton button {
 @media (max-width: 400px) {
   .containermid .sec3 {
     margin: 0 auto;
-    width: 400px;
   }
 }
 
@@ -637,7 +664,7 @@ main .formain .formbutton button {
 }
 
 .sec4 .cardsec4 {
-  min-width: 380px;
+  min-width: 300px;
   margin-bottom: 300px;
 }
 
@@ -828,6 +855,7 @@ main .formain .formbutton button {
 
 @media (max-width: 500px) {
   .sec5 {
+    width: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -842,6 +870,7 @@ main .formain .formbutton button {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -883,7 +912,6 @@ main .formain .formbutton button {
 }
 
 .sec5 .sec52 {
-  width: 100vw;
   min-width: 300px;
   background: url("/Images/homem-de-negocios-que-usa-a-tabuleta-que-analisa-dados-das-vendas-e-carta-do-grafico-do-crescimento-economico_34200-308.jpg") no-repeat;
   background-size: cover;
@@ -905,7 +933,8 @@ main .formain .formbutton button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: 40px;
+    margin: 0 auto;
+    text-align: center;
     height: 700px;
   }
 }
