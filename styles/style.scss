@@ -10,9 +10,7 @@
 h1,h2,h3{
     font-family: 'Poppins', sans-serif;
 }
-html{
-   
-}
+
 a{
     text-decoration: none;
 }
@@ -21,10 +19,8 @@ input{
 }
 body{
     width: 100vw;
-    
- overflow-x:hidden;
  margin-right: 0;
-    background-color:rgb(6, 6, 41);
+ background-color: #182044;
 }
 // body{
     //     background-color: rgb(7, 37, 102);
@@ -43,14 +39,14 @@ body{
 
     text-decoration: none;
     color: goldenrod;
+    //font-family:'Poppins', sans-serif ;
     }
     .header1{
-
+        font-size: small;
          display: flex;
         align-items: center;
         justify-content: space-around;
         align-items: center;
-        background-color:  rgb(6, 6, 41);
         height: 50px;
         border-bottom: 1px solid gray;
         nav{
@@ -79,14 +75,14 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: center;
+        
         color: goldenrod;
-        background-color:rgb(6, 6, 41) ;
-        img{
-            @media	(max-width:500px){
-                width: 80px;
+        @media	(max-width:500px){
+            justify-content: space-between;
+                img{
+                    width: 70px;
+                }
             }
-        }
 
         
 .nav-list {
@@ -95,15 +91,15 @@ body{
   }
   
   .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+   
+    margin-left: 30px;
   }
   
   .mobile-menu {
     display: none;
     cursor: pointer;
     position: absolute;
-    top:50px;
+    top:70px;
     right: 0;
     z-index: 10;
     @media	(max-width:400px){
@@ -130,19 +126,18 @@ body{
     .nav1{
         
     }
+    /*menu mobile*/
     .nav-list {
       position: absolute;
-        right: 0;
+      right: 0;
       top: 9vh;
-      
+      visibility: hidden;
       width: 20vw;
       height: 80vh;
-      background: #23232e;
+      background-color: #182044;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      transform: translateX(100%);
-     
       transition: transform 0.3s ease-in;
       
     }
@@ -159,9 +154,11 @@ body{
     transform: translateX(0);
     margin-right: 0px;
     width: 24vw;
+    visibility: visible;
    
   }
-  
+  //nav bar animation
+  /*nav bar animation*/
   @keyframes navLinkFade {
     from {
       opacity: 0;
@@ -200,16 +197,16 @@ main{
    
     
     .main{
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    //background: rgba(7, 7, 72, 0.289);
-    height: 100%;
-    justify-content: space-evenly;
-        @media	(max-width:989px){
-       flex-direction: column;
-        align-items: center;
-       
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //background: rgba(7, 7, 72, 0.289);
+            height: 100%;
+            justify-content: space-evenly;
+            @media	(max-width:989px){
+            flex-direction: column;
+            align-items: center;
+        
        
     }
     }
@@ -249,9 +246,12 @@ main{
             color: white;
             background: green;
             margin:10px;
+            font-size: small;
             @media	(max-width:600px){
                 padding: 3px;
                 border-radius: 4px;
+                text-align: center;
+
             }
             
         }
@@ -259,7 +259,9 @@ main{
             padding:8px;
             color: white;
             background: rgb(8, 8, 136);
-            margin-right: 10px;
+            margin: 10px;
+            font-size: small;
+            text-align: center;
             font-family: 'Poppins' sans-serif;
             @media	(max-width:600px){
                 padding: 2px;
@@ -274,15 +276,17 @@ main{
     .formain{
         display: flex;
         justify-content: center;
-        align-items: center;
+       
         background-color: #fff;
-        width: 400px;
-        height: 450px;
+        width: 350px;
+        height: 400px;
         @media	(max-width:600px){
             width: 300px;
         }
-        
-        h3{
+        input{
+            width: 130px;
+        }
+        h3,h4{
             text-align: center;
         }
         
@@ -297,7 +301,7 @@ main{
             border: none;
             background: rgba(128, 128, 128, 0.494);
             border-radius: 5px;
-            padding: 8px;
+            padding: 5px;
             margin: 2px;
             @media	(max-width:600px){
                 padding: 4px;
@@ -308,7 +312,7 @@ main{
             margin-top: 20px;
             margin-bottom: 20px;
             input{
-                width:328px;
+                width:280px;
                 @media	(max-width:600px){
                     width: 200px;
                 }
@@ -325,6 +329,7 @@ main{
         background: green;
         margin:10px;
         text-align: center;
+        border: none;
         }
         }
         
@@ -334,7 +339,7 @@ main{
 /*container sections*/
 .containermid{
     
-    background: rgb(6, 6, 41);
+   
     
     color: #fff;
 /*section4*/
@@ -349,7 +354,7 @@ main{
         
        
         
-        text-align: justify;
+        text-align: left;
         @media	(max-width:500px){
             width: 280px;
         }
@@ -357,15 +362,21 @@ main{
        ;
     }
     .divsec2{
-        
-        text-align: justify;
+        margin-bottom: 100px;
+        text-align: left;
         margin-top: 50px;
         display: flex;
         @media	(max-width:940px){
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: left;
+            .sec20,.sec21{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
          } 
         div{
             margin-right: 20px;
@@ -378,6 +389,11 @@ main{
         margin-top: 50px;
         background: green;
         text-align: left;
+        border: none;
+        @media	(max-width:940px){
+            text-align: center;
+        }
+        
     }
 
     .divsecimg{
@@ -396,20 +412,32 @@ main{
 /*section3*/
    
 .sec02{
+    
+    @media	(max-width:500px){
 
+        h2{
+            font-size: 20px;
+        }
+    }
     color: black;
+    
     .sec2{
         display: flex;
         flex-wrap: wrap;
+        
          background-color: #fff;
          justify-content: center;
-         
+         height: 200px;
          align-items: center;
          font-size: larger;
-       
+       border: none;
          @media	(max-width:500px){
            margin: 0 auto;
            width: 300px;
+           margin-bottom: 100px;
+           height: auto;
+           padding: 10px;
+           font-size: medium;
          ;
          } 
     }
@@ -420,6 +448,7 @@ main{
       
     
         align-items: center;
+        
      }
     }
     .Legend{
@@ -447,6 +476,8 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 align-self: flex-end;
+display: grid;
+place-items: center;
 min-width: 300px;
     background: #fff;
     color: black;
@@ -499,10 +530,9 @@ min-width: 300px;
 }
 /*section4*/
 .sec4{
-    width: 100vw;
+
  display: flex;
  flex-wrap: wrap;
- 
 align-items: center;
 height: 500px;
 margin-bottom: 100px;
@@ -510,7 +540,6 @@ margin-bottom: 100px;
     min-width: 300px;
     margin-bottom: 300px;
     @media	(max-width:500px){
-        margin: 0 auto;
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -518,6 +547,15 @@ margin-bottom: 100px;
          
       }
 
+}
+.sec40{
+    @media(max-width:500px){
+        width: 360px;
+        display: flex;
+        justify-content:center ;
+        flex-direction: column;
+        align-items: center;
+    }
 }
  .sec41{
     width: 100vw;
@@ -559,7 +597,7 @@ margin-bottom: 100px;
         position: relative;
         margin: auto;
         padding: 0 60px;
-        width: 1000px;
+       max-width: 800px;
         
         @media	(max-width:800px){
            width:  400px;
@@ -669,8 +707,8 @@ margin-bottom: 100px;
 }
 .sec5{
     @media	(max-width:500px){
-width: 100vw;
-        display: flex;
+        width: 100vw;
+         display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
@@ -691,7 +729,7 @@ width: 100vw;
            flex-direction: column;
            margin-top: 200px;
            margin: 0 auto;
-           margin-left: 20px;
+          
            align-items: center;
            img{
                width: 150px;
@@ -751,6 +789,7 @@ footer{
     display: flex;
     text-align: center;
     align-items: center;
+    background-color: #182044;
     color: #fff;
     @media	(max-width:940px){
         flex-direction: column;

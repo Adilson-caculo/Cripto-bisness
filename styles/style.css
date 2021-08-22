@@ -22,9 +22,8 @@ input {
 
 body {
   width: 100vw;
-  overflow-x: hidden;
   margin-right: 0;
-  background-color: #060629;
+  background-color: #182044;
 }
 
 /* Header */
@@ -38,6 +37,7 @@ header a {
 }
 
 header .header1 {
+  font-size: small;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +47,6 @@ header .header1 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   align-items: center;
-  background-color: #060629;
   height: 50px;
   border-bottom: 1px solid gray;
 }
@@ -93,14 +92,18 @@ header .header2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
   color: goldenrod;
-  background-color: #060629;
+  /*nav bar animation*/
 }
 
 @media (max-width: 500px) {
+  header .header2 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   header .header2 img {
-    width: 80px;
+    width: 70px;
   }
 }
 
@@ -112,15 +115,14 @@ header .header2 .nav-list {
 }
 
 header .header2 .nav-list li {
-  letter-spacing: 3px;
-  margin-left: 32px;
+  margin-left: 30px;
 }
 
 header .header2 .mobile-menu {
   display: none;
   cursor: pointer;
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 0;
   z-index: 10;
 }
@@ -141,6 +143,9 @@ header .header2 .mobile-menu div {
 }
 
 @media (max-width: 999px) {
+  header .header2 {
+    /*menu mobile*/
+  }
   header .header2 body {
     overflow-x: hidden;
   }
@@ -148,9 +153,10 @@ header .header2 .mobile-menu div {
     position: absolute;
     right: 0;
     top: 9vh;
+    visibility: hidden;
     width: 20vw;
     height: 80vh;
-    background: #23232e;
+    background-color: #182044;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -160,8 +166,6 @@ header .header2 .mobile-menu div {
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.3s ease-in;
     transition: -webkit-transform 0.3s ease-in;
     transition: transform 0.3s ease-in;
@@ -181,6 +185,7 @@ header .header2 .nav-list.active {
           transform: translateX(0);
   margin-right: 0px;
   width: 24vw;
+  visibility: visible;
 }
 
 @-webkit-keyframes navLinkFade {
@@ -313,12 +318,14 @@ main .main1 div .a1 {
   color: white;
   background: green;
   margin: 10px;
+  font-size: small;
 }
 
 @media (max-width: 600px) {
   main .main1 div .a1 {
     padding: 3px;
     border-radius: 4px;
+    text-align: center;
   }
 }
 
@@ -326,7 +333,9 @@ main .main1 div .a2 {
   padding: 8px;
   color: white;
   background: #080888;
-  margin-right: 10px;
+  margin: 10px;
+  font-size: small;
+  text-align: center;
   font-family: 'Poppins' sans-serif;
 }
 
@@ -344,12 +353,9 @@ main .formain {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: #fff;
-  width: 400px;
-  height: 450px;
+  width: 350px;
+  height: 400px;
 }
 
 @media (max-width: 600px) {
@@ -358,7 +364,11 @@ main .formain {
   }
 }
 
-main .formain h3 {
+main .formain input {
+  width: 130px;
+}
+
+main .formain h3, main .formain h4 {
   text-align: center;
 }
 
@@ -381,7 +391,7 @@ main .formain input {
   border: none;
   background: rgba(128, 128, 128, 0.494);
   border-radius: 5px;
-  padding: 8px;
+  padding: 5px;
   margin: 2px;
 }
 
@@ -397,7 +407,7 @@ main .formain .formdiv2 {
 }
 
 main .formain .formdiv2 input {
-  width: 328px;
+  width: 280px;
 }
 
 @media (max-width: 600px) {
@@ -421,11 +431,11 @@ main .formain .formbutton button {
   background: green;
   margin: 10px;
   text-align: center;
+  border: none;
 }
 
 /*container sections*/
 .containermid {
-  background: #060629;
   color: #fff;
   /*section4*/
   /*section3*/
@@ -448,7 +458,7 @@ main .formain .formbutton button {
 }
 
 .containermid .sec01 .disec1 {
-  text-align: justify;
+  text-align: left;
 }
 
 @media (max-width: 500px) {
@@ -458,7 +468,8 @@ main .formain .formbutton button {
 }
 
 .containermid .sec01 .divsec2 {
-  text-align: justify;
+  margin-bottom: 100px;
+  text-align: left;
   margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,7 +488,22 @@ main .formain .formbutton button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    text-align: center;
+    text-align: left;
+  }
+  .containermid .sec01 .divsec2 .sec20, .containermid .sec01 .divsec2 .sec21 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -492,6 +518,13 @@ main .formain .formbutton button {
   margin-top: 50px;
   background: green;
   text-align: left;
+  border: none;
+}
+
+@media (max-width: 940px) {
+  .containermid .sec01 button {
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
@@ -504,6 +537,12 @@ main .formain .formbutton button {
   color: black;
 }
 
+@media (max-width: 500px) {
+  .containermid .sec02 h2 {
+    font-size: 20px;
+  }
+}
+
 .containermid .sec02 .sec2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -514,16 +553,22 @@ main .formain .formbutton button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-size: larger;
+  border: none;
 }
 
 @media (max-width: 500px) {
   .containermid .sec02 .sec2 {
     margin: 0 auto;
     width: 300px;
+    margin-bottom: 100px;
+    height: auto;
+    padding: 10px;
+    font-size: medium;
   }
 }
 
@@ -575,6 +620,9 @@ main .formain .formbutton button {
           justify-content: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
   min-width: 300px;
   background: #fff;
   color: black;
@@ -649,7 +697,6 @@ main .formain .formbutton button {
 
 /*section4*/
 .sec4 {
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -669,7 +716,6 @@ main .formain .formbutton button {
 
 @media (max-width: 500px) {
   .sec4 .cardsec4 {
-    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -680,6 +726,25 @@ main .formain .formbutton button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .sec4 .sec40 {
+    width: 360px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -740,7 +805,7 @@ main .formain .formbutton button {
   position: relative;
   margin: auto;
   padding: 0 60px;
-  width: 1000px;
+  max-width: 800px;
 }
 
 @media (max-width: 800px) {
@@ -893,7 +958,6 @@ main .formain .formbutton button {
             flex-direction: column;
     margin-top: 200px;
     margin: 0 auto;
-    margin-left: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -977,6 +1041,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #182044;
   color: #fff;
 }
 
