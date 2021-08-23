@@ -7,6 +7,7 @@ class MobileNavbar {
     this.activeClass = "active";
 
      this.handleClick = this.handleClick.bind(this);
+     this.animateLinks = this.animateLinks.bind(this);
   }
 
   animateLinks() {
@@ -16,6 +17,11 @@ class MobileNavbar {
         : (link.style.animation = `navLinkFade 0.5s ease forwards ${
             index / 7 + 0.3
           }s`);
+          link.addEventListener('click',()=>{
+            this.navList.classList.toggle(this.activeClass);
+             this.mobileMenu.classList.toggle(this.activeClass);
+             console.log(this)
+             })
     });
   }
 
@@ -28,7 +34,10 @@ class MobileNavbar {
   addClickEvent() {
     this.mobileMenu.addEventListener("click", this.handleClick);
   }
- 
+
+  // navLinks.addEventListener('click',()=>{
+  //   this.mobileMenu.classList.remove(this.activeClass);
+  // })
   init() {
     if (this.mobileMenu) {
       this.addClickEvent();
@@ -44,6 +53,16 @@ const mobileNavbar = new MobileNavbar(
 );
 mobileNavbar.init();
 
+
+
+// formulario
+document.querySelector('#show-login').addEventListener('click', ()=>{
+  const poput = document.querySelector('.popup')
+  poput.classList.add('active')
+  document.querySelector('.close-btn').addEventListener('click',()=>{
+ poput.classList.remove('active')
+  })
+})
 
 //Slide 
 $(".carousel").owlCarousel({
