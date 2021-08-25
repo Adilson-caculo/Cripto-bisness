@@ -21,8 +21,6 @@ input {
 }
 
 body {
-  width: 100vw;
-  margin-right: 0;
   background-color: #182044;
 }
 
@@ -77,6 +75,16 @@ header .header1 nav a::after {
   }
 }
 
+@media (max-width: 400px) {
+  header .header1 {
+    display: block;
+    text-align: left;
+  }
+  header .header1 nav a {
+    margin-left: 2px;
+  }
+}
+
 header .header2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,16 +95,21 @@ header .header2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
   margin: 0 auto;
   color: goldenrod;
   /*nav bar animation*/
 }
 
-@media (max-width: 500px) {
+header .header2 img {
+  width: 100px;
+}
+
+header .header2 button {
+  padding: 5px 10px;
+}
+
+@media (max-width: 700px) {
   header .header2 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -126,9 +139,9 @@ header .header2 .mobile-menu {
   z-index: 10;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   header .header2 .mobile-menu {
-    right: 10px;
+    right: 0px;
   }
 }
 
@@ -171,8 +184,8 @@ header .header2 .mobile-menu div {
     transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
   }
   header .header2 .nav-list button {
-    padding: 10px;
-    font-size: 15px;
+    padding: 8px;
+    font-size: 10px;
     font-weight: 600;
     color: #222;
     background: #f5f5f5;
@@ -387,6 +400,22 @@ main .main1 {
   margin-bottom: 50px;
 }
 
+main .main1 hgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main .main1 .hs {
   width: 300px;
 }
@@ -567,16 +596,45 @@ main .formain .formbutton button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .containermid .sec01 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .containermid .sec01 .disec1 {
-  text-align: left;
+  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .containermid .sec01 .disec1 {
     width: 280px;
+    padding: 10px 20px;
+  }
+  .containermid .sec01 .disec1 h1 {
+    font-size: medium;
+  }
+  .containermid .sec01 .disec1 p {
+    text-align: center;
+    padding: 10 15px;
   }
 }
 
@@ -640,7 +698,7 @@ main .formain .formbutton button {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .containermid .sec01 .divsecimg img {
     width: 300px;
   }
@@ -650,7 +708,7 @@ main .formain .formbutton button {
   color: black;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .containermid .sec02 h2 {
     font-size: 20px;
   }
@@ -667,20 +725,20 @@ main .formain .formbutton button {
       -ms-flex-pack: center;
           justify-content: center;
   height: 200px;
+  font-size: larger;
+  border: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: larger;
-  border: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .containermid .sec02 .sec2 {
     margin: 0 auto;
     width: 300px;
     margin-bottom: 100px;
+    padding: 10px 20px;
     height: auto;
-    padding: 10px;
     font-size: medium;
   }
 }
@@ -741,12 +799,6 @@ main .formain .formbutton button {
   color: black;
 }
 
-@media (max-width: 400px) {
-  .containermid .sec3 {
-    margin: 0 auto;
-  }
-}
-
 .containermid .sec3 .sec30 {
   height: 100px;
   padding: 20px;
@@ -804,7 +856,7 @@ main .formain .formbutton button {
 
 @media (max-width: 1049px) {
   .containermid .sec3 .divcard {
-    height: 300px;
+    height: 360px;
   }
 }
 
@@ -827,7 +879,7 @@ main .formain .formbutton button {
   margin-bottom: 300px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec4 .cardsec4 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -845,9 +897,8 @@ main .formain .formbutton button {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec4 .sec40 {
-    width: 360px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -874,10 +925,9 @@ main .formain .formbutton button {
   min-width: 300px;
 }
 
-@media (max-width: 500px) {
-  .sec4 .sec41 {
-    margin: 0 auto;
-    width: 300px;
+@media (max-width: 700px) {
+  .sec4 .sec41 div {
+    padding: 0px;
   }
 }
 
@@ -896,9 +946,8 @@ main .formain .formbutton button {
           flex-direction: column;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec4 .sec41 div {
-    width: 300px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -914,12 +963,6 @@ main .formain .formbutton button {
   margin-bottom: 100px;
 }
 
-@media (max-width: 500px) {
-  .sec4 .sec42 {
-    width: 350px;
-  }
-}
-
 .sec4 .sec42 .carousel {
   position: relative;
   margin: auto;
@@ -927,15 +970,15 @@ main .formain .formbutton button {
   max-width: 800px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .sec4 .sec42 .carousel {
-    width: 400px;
+    width: 450px;
   }
 }
 
 @media (max-width: 500px) {
   .sec4 .sec42 .carousel {
-    width: 330px;
+    width: 300px;
   }
 }
 
@@ -1023,7 +1066,19 @@ main .formain .formbutton button {
   color: black;
   text-align: center;
   height: 500px;
-  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .sec4 .sec42 .cardsec4 img {
@@ -1034,7 +1089,7 @@ main .formain .formbutton button {
   margin-top: 300px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec5 {
     width: 100vw;
     display: -webkit-box;
@@ -1097,7 +1152,7 @@ main .formain .formbutton button {
   background-size: cover;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec5 .sec52 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1129,7 +1184,7 @@ main .formain .formbutton button {
   margin: 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sec5 .sec52 .sec53 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

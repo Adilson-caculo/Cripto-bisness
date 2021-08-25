@@ -18,7 +18,7 @@ class MobileNavbar {
             index / 7 + 0.3
           }s`);
           link.addEventListener('click',()=>{
-            this.navList.classList.toggle(this.activeClass);
+            this.navList.classList.remove(this.activeClass);
              this.mobileMenu.classList.toggle(this.activeClass);
              console.log(this)
              })
@@ -26,9 +26,10 @@ class MobileNavbar {
   }
 
   handleClick() {
+    this.animateLinks();
     this.navList.classList.toggle(this.activeClass);
     this.mobileMenu.classList.toggle(this.activeClass);
-    this.animateLinks();
+    
   }
 
   addClickEvent() {
