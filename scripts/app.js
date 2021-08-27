@@ -4,38 +4,42 @@ class MobileNavbar {
     this.mobileMenu = document.querySelector(mobileMenu);
     this.navList = document.querySelector(navList);
     this.navLinks = document.querySelectorAll(navLinks);
+    
     this.activeClass = "active";
 
      this.handleClick = this.handleClick.bind(this);
      this.animateLinks = this.animateLinks.bind(this);
+   
   }
 
-  animateLinks() {
-    this.navLinks.forEach((link, index) => {
-      link.style.animation
-        ? (link.style.animation = "")
-        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
-            index / 7 + 0.3
-          }s`);
-          link.addEventListener('click',()=>{
-            this.navList.classList.remove(this.activeClass);
-             this.mobileMenu.classList.toggle(this.activeClass);
-             console.log(this)
-             })
-    });
-  }
+ 
 
   handleClick() {
     this.animateLinks();
     this.navList.classList.toggle(this.activeClass);
     this.mobileMenu.classList.toggle(this.activeClass);
     
+    
   }
 
   addClickEvent() {
     this.mobileMenu.addEventListener("click", this.handleClick);
+    
+  
   }
-
+ animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`);
+        
+    });
+  }
+  
+ 
   // navLinks.addEventListener('click',()=>{
   //   this.mobileMenu.classList.remove(this.activeClass);
   // })
@@ -50,12 +54,17 @@ class MobileNavbar {
 const mobileNavbar = new MobileNavbar(
   ".mobile-menu",
   ".nav-list",
-  ".nav-list li",
+  ".nav-list li ",
 );
 mobileNavbar.init();
 
 
-
+const oi = document.querySelectorAll(' li ')
+oi.addEventListener('click', (intem) =>{
+  intem.classList.remove('active');
+  console.log('oi')
+})
+console.log(oi)
 // formulario
 document.querySelector('#show-login').addEventListener('click', ()=>{
   const poput = document.querySelector('.popup')
