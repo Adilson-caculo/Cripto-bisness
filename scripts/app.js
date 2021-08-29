@@ -58,13 +58,16 @@ const mobileNavbar = new MobileNavbar(
 );
 mobileNavbar.init();
 
+const RemoveLinks= document.querySelectorAll('#links')
+ RemoveLinks.forEach((item)=>{
+    item.addEventListener('click',()=>{
+      mobileNavbar.navList.classList.toggle(mobileNavbar.activeClass);
+     mobileNavbar.mobileMenu.classList.toggle(mobileNavbar.activeClass);
+      console.log('oi')
+      mobileNavbar.animateLinks();
+    })
+ })
 
-const oi = document.querySelectorAll(' li ')
-oi.addEventListener('click', (intem) =>{
-  intem.classList.remove('active');
-  console.log('oi')
-})
-console.log(oi)
 // formulario
 document.querySelector('#show-login').addEventListener('click', ()=>{
   const poput = document.querySelector('.popup')

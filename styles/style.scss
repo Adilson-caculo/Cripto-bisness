@@ -28,6 +28,9 @@ html{
     scroll-behavior: smooth;
 }
     header{
+      display:flex ;
+      flex-direction: column;
+       justify-items: auto;
       
     a{
 
@@ -80,11 +83,16 @@ html{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: center;
+        width: 100%;
         margin: 0 auto;
+        background-color: #182044;
         color: goldenrod;
+        text-align: center;
+        padding:1.5rem ;
+        height: 100px;
+        
         img{
-          width: 100px;
+          width: 80px;
         }
         button{
           padding:5px 10px;
@@ -113,7 +121,7 @@ html{
     display: none;
     cursor: pointer;
     position: absolute;
-    top:70px;
+    top:80px;
     
     z-index: 10;
     @media	(max-width:700px){
@@ -331,13 +339,19 @@ main{
      } 
     .main1{
         color: goldenrod;
-        
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         hgroup{
           display: flex;
           flex-direction: column;
           justify-content: center;
+          text-align:left;
           align-items: center;
+          padding: 1.6rem 8%;
         }
         .hs{
             width: 300px;
@@ -398,7 +412,7 @@ main{
     .formain{
         display: flex;
         justify-content: center;
-       
+        padding: 1.6rem 8%;
         background-color: #fff;
         width: 350px;
         height: 400px;
@@ -512,6 +526,9 @@ main{
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                p{
+                  padding: 1rem;
+                }
             }
          } 
         div{
@@ -650,7 +667,7 @@ min-width: 300px;
         
         text-align: center;
         width: 300px;
-        height: 200px;
+        height: 330px;
         box-shadow: 5px 1px 13px -4px rgba(0,0,0,0.96);
         margin: 10px;
         @media	(max-width:1049px){

@@ -30,6 +30,17 @@ html {
   scroll-behavior: smooth;
 }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: auto;
+}
+
 header a {
   text-decoration: none;
   color: goldenrod;
@@ -101,14 +112,18 @@ header .header2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  width: 100%;
   margin: 0 auto;
+  background-color: #182044;
   color: goldenrod;
+  text-align: center;
+  padding: 1.5rem;
+  height: 100px;
   /*nav bar animation*/
 }
 
 header .header2 img {
-  width: 100px;
+  width: 80px;
 }
 
 header .header2 button {
@@ -141,7 +156,7 @@ header .header2 .mobile-menu {
   display: none;
   cursor: pointer;
   position: absolute;
-  top: 70px;
+  top: 80px;
   z-index: 10;
 }
 
@@ -403,6 +418,20 @@ main .main {
 
 main .main1 {
   color: goldenrod;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 50px;
 }
 
@@ -417,9 +446,11 @@ main .main1 hgroup {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1.6rem 8%;
 }
 
 main .main1 .hs {
@@ -501,6 +532,7 @@ main .formain {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 1.6rem 8%;
   background-color: #fff;
   width: 350px;
   height: 400px;
@@ -682,6 +714,9 @@ main .formain .formbutton button {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .containermid .sec01 .divsec2 .sec20 p, .containermid .sec01 .divsec2 .sec21 p {
+    padding: 1rem;
+  }
 }
 
 .containermid .sec01 .divsec2 div {
@@ -854,7 +889,7 @@ main .formain .formbutton button {
 .containermid .sec3 .divcard {
   text-align: center;
   width: 300px;
-  height: 200px;
+  height: 330px;
   -webkit-box-shadow: 5px 1px 13px -4px rgba(0, 0, 0, 0.96);
           box-shadow: 5px 1px 13px -4px rgba(0, 0, 0, 0.96);
   margin: 10px;
